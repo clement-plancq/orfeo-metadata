@@ -4,5 +4,5 @@ require 'orfeo_metadata/metadata_store'
 require "orfeo_metadata/version"
 
 module OrfeoMetadata
-  DEFAULT_MD_FILE = File.expand_path '../../data/metadata.tsv', __FILE__
+  DEFAULT_MD_FILE = File.expand_path '../data/metadata.tsv', File.dirname(__FILE__)
 end
