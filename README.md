@@ -3,7 +3,7 @@
 Store metadata, particularly for linguistic annotations of a certain type.
 
 See the [orfeo-importer](https://github.com/larilampen/orfeo-importer)
-repository for more information about the project.
+repository for more information about project Orfeo.
 
 
 # Configuration
@@ -30,6 +30,16 @@ used:
    extract the value of the field from a TEI document. If the field is
    not multi-valued, only the first match is used; otherwise all
    matching values are extracted.
+
+Metadata fields can also be set through other methods, such as
+metadata text files (with suffix .md.txt and format field=value on
+each line). In these cases, note that if a field is defined to have a
+single value and it is already defined when a TEI file is read, the
+XPath expression will not be evaluated and the existing value will be
+left unchanged. Thus values set in metadata text files override those
+in TEI files. In contrast, for a field with multiple values, all
+occurrences in the metadata text and TEI files will be stored
+together.
 
 
 # Installation

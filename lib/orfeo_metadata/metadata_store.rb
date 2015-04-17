@@ -21,6 +21,7 @@ module OrfeoMetadata
     def read_tei(xmldoc)
       # Note that line breaks must be removed from metadata values.
       @model.fields.each do |field|
+        next if field.xpath == 'n/a'
         if field.multi_valued?
           val = []
           XPath.each(xmldoc, field.xpath) do |n|
@@ -35,9 +36,32 @@ module OrfeoMetadata
             @num_speakers = val.size
           end
         else
+          # Do not overwrite existing value.
+          next if @val_by_field.key? field
           val = XPath.first(xmldoc, field.xpath).to_s.gsub(/[\n\r]/, '').strip
         end
         @val_by_field[field] = val unless val.empty?
+      end
+    end
+
+    # Read metadata values from a text file (format is key=value on
+    # each line of file). If field is multivalued, it can be defined
+    # multiple times.
+    def read_txt(filename)
+      File.open(filename) do |file|
+        file.each do |line|
+          name, value = line.split '='
+          next if name.nil?
+          if @field_by_name.key? name
+            field = @field_by_name[name]
+            if field.multi_valued?
+              @val_by_field[field] = [] unless @val_by_field.key? field
+              @val_by_field[field] << value
+            else
+              @val_by_field[field] = value
+            end
+          end
+        end
       end
     end
 

@@ -27,3 +27,5 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	/TEI/teiH
 profession	Profession du locuteur	s	i	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
+quality	Qualité d'annotation	g	i	n/a
+annotator	Annotateur	g	i	n/a
