@@ -49,7 +49,7 @@ the computer(s) where the importer is run and the search UI in
 installed:
 
 ```sh
-git clone https://github.com/larilampen/orfeo-metadata.git
+git clone https://github.com/orfeo-treebank/orfeo-metadata.git
 cd orfeo-metadata
 rake install
 ```
