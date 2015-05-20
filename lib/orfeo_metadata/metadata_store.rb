@@ -79,6 +79,10 @@ module OrfeoMetadata
       unless @val_by_field[field]
         @val_by_field[field] = sample.corpus.to_s
       end
+      field = @field_by_name['url']
+      unless @val_by_field[field]
+        @val_by_field[field] = sample.sample_url
+      end
     end
 
     def field(name)

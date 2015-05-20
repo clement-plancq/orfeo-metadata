@@ -29,3 +29,4 @@ niveauEtudes	Niveau d'études du locuteur	s	i	/TEI/teiHeader/profileDesc/particD
 lieuNaissance	Lieu de naissance du locuteur	s	i	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
 quality	Qualité d'annotation	g	i	n/a
 annotator	Annotateur	g	i	n/a
+url	Addresse d'echantillon	g	i	n/a
