@@ -100,38 +100,38 @@ module OrfeoMetadata
     # Loop through specific metadata groups (i.e. speakers) and yield
     # an enumerator to each one in turn, along with the number of the
     # group.
-    def enumerators_spe(&block)
+    def enumerators_spe
       @num_speakers.times do |i|
         yield each_spe_num(i), i
       end
     end
 
     # Iterate through all metadata.
-    def each(&block)
+    def each
       return enum_for(:each) unless block_given?
       @val_by_field.each do |k, v|
-        block.yield k, v
+        yield k, v
       end
     end
 
     # Iterate through general metadata.
-    def each_gen(&block)
+    def each_gen
       return enum_for(:each_gen) unless block_given?
       @val_by_field.reject{ |k, v| k.specific? }.each do |k, v|
-        block.yield k, v
+        yield k, v
       end
     end
 
     # Iterate through speaker metadata.
-    def each_spe(&block)
+    def each_spe
       return enum_for(:each_spe) unless block_given?
       @val_by_field.select{ |k, v| k.specific? }.each do |k, v|
-        block.yield k, v
+        yield k, v
       end
     end
 
     # Iterate through speaker metadata of the given speaker only.
-    def each_spe_num(num, &block)
+    def each_spe_num(num)
       unless block_given?
         return Enumerator.new do |y|
           each_spe do |k, v|
@@ -140,7 +140,7 @@ module OrfeoMetadata
         end
       end
       each_spe do |k, v|
-        block.yield k, v[num]
+        yield k, v[num]
       end
     end
   end
