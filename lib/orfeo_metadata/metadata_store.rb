@@ -81,7 +81,7 @@ module OrfeoMetadata
       end
       field = @field_by_name['url']
       unless @val_by_field[field]
-        @val_by_field[field] = sample.sample_url
+        @val_by_field[field] = sample.sample_url if sample.sample_url
       end
     end
 
