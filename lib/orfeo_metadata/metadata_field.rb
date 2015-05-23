@@ -9,7 +9,7 @@ module OrfeoMetadata
     attr :desc
     attr :xpath
 
-    def initialize(name, xpath, indexable, specific, facet = false, search_target = false, multi_valued = false, desc = nil)
+    def initialize(name, xpath, indexable, specific, facet = false, show_conc = false, show_snip = false, search_target = false, multi_valued = false, desc = nil)
       @name = name
       @xpath = xpath
       @desc = desc
@@ -18,6 +18,8 @@ module OrfeoMetadata
       @multi_valued = multi_valued
       @facet = facet
       @search_target = search_target
+      @show_conc = show_conc
+      @show_snip = show_snip
     end
 
     # Facets and "searchable" fields are indexable.
@@ -39,6 +41,14 @@ module OrfeoMetadata
 
     def search_target?
       @search_target
+    end
+
+    def show_in_concordancer?
+      @show_conc
+    end
+
+    def show_in_snippet_view?
+      @show_snip
     end
 
     def to_s

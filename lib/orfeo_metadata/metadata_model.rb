@@ -16,10 +16,10 @@ module OrfeoMetadata
     # file is specified, from the default file contained in this gem.
     def load(filename = nil)
       # Skip the first line since it's used for headers.
-      File.readlines(filename || DEFAULT_MD_FILE).drop(1).each do |line| 
+      File.readlines(filename || DEFAULT_MD_FILE).drop(1).each do |line|
         line.chomp!
         columns = line.split(/\t/)
-        puts "Warning: malformatted line in metadata model: #{line}" unless columns.size == 5
+        puts "Warning: malformatted line in metadata model: #{line}" unless columns.size == 7
         if columns[2] == 's'
           spe = true
           multi = true
@@ -41,8 +41,10 @@ module OrfeoMetadata
         else
           index = false
         end
+        show_conc = (columns[4] == 'y')
+        show_snip = (columns[5] == 'y')
 
-        @fields << MetadataField.new(columns[0], columns[4], index, spe, facet, target, multi, columns[1])
+        @fields << MetadataField.new(columns[0], columns[6], index, spe, facet, show_conc, show_snip, target, multi, columns[1])
       end
     end
 
