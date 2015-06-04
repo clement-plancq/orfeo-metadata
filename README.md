@@ -2,7 +2,7 @@
 
 Store metadata, particularly for linguistic annotations of a certain type.
 
-See the [orfeo-importer](https://github.com/larilampen/orfeo-importer)
+See the [orfeo](https://github.com/orfeo-treebank/orfeo)
 repository for more information about project Orfeo.
 
 
