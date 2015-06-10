@@ -21,7 +21,7 @@ module OrfeoMetadata
       'associatif' => ['milieuProfessionel'],
       'médical' => ['milieuProfessionel'],
       'politique' => ['milieuProfessionel'],
-      'face_à_face' => ['distance'],
+      'face_à_face' => ['distance', 'face à face'],
       'environnement_très_bruité' => ['qualiteSon', 'environnement très bruité'],
       'environnement_peu_bruité'  => ['qualiteSon', 'environnement peu bruité'],
       'environnement_bruité' => ['qualiteSon', 'environnement bruité'],
