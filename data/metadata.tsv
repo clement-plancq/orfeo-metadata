@@ -2,17 +2,17 @@ Short name	Long name	Field type	Indexing and search	Show in concordancer	Show in
 type	Type	g	f	y	n	/TEI/teiHeader/fileDesc/notesStmt/note[@type='oralEcrit']/text()
 nomCorpus	Corpus	g	f	y	n	/TEI/teiHeader/encodingDesc/projectDesc/p/text()
 langue	Langue	g	f	n	n	/TEI/teiHeader/profileDesc/langUsage/language/text()
-nomFichier	Nom du fichier	g	i	n	y	/TEI/teiHeader/fileDesc/titleStmt/title/text()
+nomFichier	Nom du fichier	g	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/title/text()
 responsables	Responsable(s)	gm	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/respStmt/name[preceding::resp[1] = 'Responsables du corpus']/text()
 resume	Résumé	g	s	n	n	/TEI/teiHeader/profileDesc/abstract/p/text()
 dateEnregistrement	Date de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/date/text()
 dureeEnregistrement	Durée de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@dur
 natureSignal	Nature du signal	g	f	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@type
-qualiteSon	Qualité du son	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana[1]
-qualiteVideo	Qualité de la vidéo	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana[1]
-formatSignal	Format du signal	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana[2]
-formatVideo	Format de la vidéo	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana[2]
-anonymisationSignal	Anonymisation du signal	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@ana[3]
+qualiteSon	Qualité du son	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
+qualiteVideo	Qualité de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
+formatSignal	Format du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
+formatVideo	Format de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
+anonymisationSignal	Anonymisation du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@ana
 localisationEnregistrement	Localisation de l'enregistrement	g	i	n	n	/TEI/teiHeader/profileDesc/settingDesc/place/placeName/text()
 nombreLocuteurs	Nombre de locuteurs	g	f	n	n	count(/TEI/teiHeader/profileDesc/particDesc/listPerson/person)
 conditionsUtilisation	Conditions d'utilisation	g	i	n	n	/teiHeader/fileDesc/publicationStmt/text()
@@ -27,6 +27,10 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	n	n	/TEI/
 profession	Profession du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
+nature	Nature	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+categorie	Catégorie	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+milieuProfessionel	Milieu professionel	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
 url	Addresse d'echantillon	g	i	n	n	n/a

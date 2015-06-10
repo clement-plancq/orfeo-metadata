@@ -31,6 +31,8 @@ used:
    not multi-valued, only the first match is used; otherwise all
    matching values are extracted.
 
+## Adding fields via metadata text files
+
 Metadata fields can also be set through other methods, such as
 metadata text files (with suffix .md.txt and format field=value on
 each line). In these cases, note that if a field is defined to have a
@@ -40,6 +42,54 @@ left unchanged. Thus values set in metadata text files override those
 in TEI files. In contrast, for a field with multiple values, all
 occurrences in the metadata text and TEI files will be stored
 together.
+
+## Configuring taxonomies
+
+A number of fields in the metadata model are defined in a different
+way from the others, using taxonomies or controlled
+vocabularies. These are defined in an external file named
+`fsOrfeo.xml`. This awkward and complex method makes it difficult to
+configure changes in the metadata fields. Instead, this module handles
+them through a simplistic version that does not in fact read
+`fsOrfeo.xml` (so that file is not required).
+
+The taxonomies are defined in a Ruby file,
+[orfeo_hack.rb](lib/orfeo_metadata/orfeo_hack.rb). If they change,
+that file needs to be edited to reflect the changes. The format of the
+mappings is very simple (indeed, much simpler than the original
+`fsOrfeo.xml`) and should be obvious by looking at the examples. Note
+that field names in the mapping and the metadata definition file must
+match.
+
+In the metadata definition file, creating a field with `orfeo:xyz` in
+the XPath field causes the XPath expression to be evaluated first. The
+result is evaluated as a string, split on whitespace and the character
+\#, and then the defined taxonomic mapping is applied to the result.
+
+Consider the following example: `orfeo_hack.rb` contains these
+definitions:
+
+```ruby
+'environnement_très_bruité' => ['qualiteSon', 'environnement très bruité'],
+'environnement_peu_bruité'  => ['qualiteSon', 'environnement peu bruité'],
+'environnement_bruité' => ['qualiteSon', 'environnement bruité'],
+'enregistrement_défectueux' => ['qualiteSon', 'enregistrement défectueux'],
+```
+
+The metadata mappings file has this line:
+
+```tsv
+qualiteSon	Qualité du son	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
+```
+
+And the input TEI file contains this:
+
+```xml
+<recording type="audio" dur="01:08:46" ana="#environnement_peu_bruité #audio/x-wav">
+```
+
+The metadata field qualiteSon will be assigned the value
+"environnement peu bruité".
 
 
 # Installation

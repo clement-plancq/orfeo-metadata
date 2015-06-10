@@ -22,7 +22,14 @@ module OrfeoMetadata
       # Note that line breaks must be removed from metadata values.
       @model.fields.each do |field|
         next if field.xpath == 'n/a'
-        if field.multi_valued?
+        if field.xpath.start_with? 'orfeo:'
+          # The rest of the field after 'orfeo:' is the actual XPath.
+          xp = field.xpath[6..-1]
+          val1 = XPath.first(xmldoc, xp).to_s.gsub(/[\n\r]/, '').strip
+          val = OrfeoHack.map_vocab(field.name, val1)
+          next if val.empty?
+          val = val[0] unless field.multi_valued?
+        elsif field.multi_valued?
           val = []
           XPath.each(xmldoc, field.xpath) do |n|
             text = n.to_s.gsub(/[\n\r]/, '').strip
