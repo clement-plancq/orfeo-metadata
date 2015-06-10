@@ -79,7 +79,7 @@ definitions:
 The metadata mappings file has this line:
 
 ```tsv
-qualiteSon	Qualité du son	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
+qualiteSon	Qualité du son	g	i	n	n	orfeo:/a/b/c/recording[@type='audio']/@ana
 ```
 
 And the input TEI file contains this:

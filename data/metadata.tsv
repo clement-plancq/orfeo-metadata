@@ -8,7 +8,7 @@ resume	Résumé	g	s	n	n	/TEI/teiHeader/profileDesc/abstract/p/text()
 dateEnregistrement	Date de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/date/text()
 dureeEnregistrement	Durée de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@dur
 natureSignal	Nature du signal	g	f	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@type
-qualiteSon	Qualité du son	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
+qualiteSon	Qualité du son	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
 qualiteVideo	Qualité de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
 formatSignal	Format du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
 formatVideo	Format de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
