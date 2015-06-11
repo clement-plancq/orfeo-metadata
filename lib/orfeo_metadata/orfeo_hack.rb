@@ -10,6 +10,7 @@ module OrfeoMetadata
     # metadata field and, optionally, the full string to be used
     # (otherwise the key string itself will be used).
     @taxonomy_mappings = {
+      # These keys are from fsOrfeo.xml.
       'réunion' => ['nature'],
       'entretien' => ['nature'],
       'conversation' => ['nature'],
@@ -18,9 +19,9 @@ module OrfeoMetadata
       'professionnel' => ['categorie'],
       'privé' => ['categorie'],
       'public' => ['categorie'],
-      'associatif' => ['milieuProfessionel'],
-      'médical' => ['milieuProfessionel'],
-      'politique' => ['milieuProfessionel'],
+      'associatif' => ['milieuProfessionnel'],
+      'médical' => ['milieuProfessionnel'],
+      'politique' => ['milieuProfessionnel'],
       'face_à_face' => ['distance', 'face à face'],
       'environnement_très_bruité' => ['qualiteSon', 'environnement très bruité'],
       'environnement_peu_bruité'  => ['qualiteSon', 'environnement peu bruité'],
@@ -28,7 +29,14 @@ module OrfeoMetadata
       'enregistrement_défectueux' => ['qualiteSon', 'enregistrement défectueux'],
       'x' => ['qualiteVideo'],
       'bip' => ['anonymisationSignal'],
-      'script_Hirst' => ['anonymisationSignal', 'script Hirst']
+      'script_Hirst' => ['anonymisationSignal', 'script Hirst'],
+
+      # These keys are from actual instances of TEI.
+      'très_bruité' => ['qualiteSon', 'environnement très bruité'],
+      'peu_bruité'  => ['qualiteSon', 'environnement peu bruité'],
+      'environnement_bruité' => ['qualiteSon', 'environnement bruité'],
+      'problème_enregistrement' => ['qualiteSon', 'enregistrement défectueux'],
+      'script' => ['anonymisationSignal', 'script Hirst'],
     }
 
     # Return value(s) that the given string maps to for a specific field.

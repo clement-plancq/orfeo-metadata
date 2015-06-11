@@ -29,7 +29,7 @@ niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/par
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
 nature	Nature	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 categorie	Catégorie	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-milieuProfessionel	Milieu professionel	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+milieuProfessionnel	Milieu professionnel	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
