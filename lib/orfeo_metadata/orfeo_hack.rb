@@ -34,7 +34,7 @@ module OrfeoMetadata
       # These keys are from actual instances of TEI.
       'très_bruité' => ['qualiteSon', 'environnement très bruité'],
       'peu_bruité'  => ['qualiteSon', 'environnement peu bruité'],
-      'environnement_bruité' => ['qualiteSon', 'environnement bruité'],
+      'bruité' => ['qualiteSon', 'environnement bruité'],
       'problème_enregistrement' => ['qualiteSon', 'enregistrement défectueux'],
       'script' => ['anonymisationSignal', 'script Hirst'],
     }
