@@ -7,7 +7,7 @@ responsables	Responsable(s)	gm	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/respStmt/
 resume	Résumé	g	s	n	n	/TEI/teiHeader/profileDesc/abstract/p/text()
 dateEnregistrement	Date de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/date/text()
 dureeEnregistrement	Durée de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@dur
-natureSignal	Nature du signal	g	f	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@type
+natureSignal	Nature du signal	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@type
 qualiteSon	Qualité du son	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
 qualiteVideo	Qualité de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
 formatSignal	Format du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='audio']/@ana
@@ -27,9 +27,9 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	n	n	/TEI/
 profession	Profession du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
-nature	Nature	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-categorie	Catégorie	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-milieuProfessionnel	Milieu professionnel	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+nature	Type de texte	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+secteur	Secteur	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+milieu	Milieu	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
