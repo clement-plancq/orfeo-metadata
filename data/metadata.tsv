@@ -17,7 +17,7 @@ localisationEnregistrement	Localisation de l'enregistrement	g	i	n	n	/TEI/teiHead
 nombreLocuteurs	Nombre de locuteurs	g	f	n	n	count(/TEI/teiHeader/profileDesc/particDesc/listPerson/person)
 conditionsUtilisation	Conditions d'utilisation	g	i	n	n	/teiHeader/fileDesc/publicationStmt/text()
 niveauxAnnotation	Niveaux d'annotation	gm	i	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/interpretation/p/text()
-formatTranscription	Format de la transcription	gm	i	n	n	concat(/TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@target,' (type ',/TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@type, ')')
+formatTranscription	Format de la transcription	gm	i	n	n	if (TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@type) then concat(/TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@target, ' (type ', /TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@type, ')') else /TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@target
 anonymisationTranscription	Anonymisation de la transcription	g	i	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/normalization/@ana
 nombreMots	Nombre de mots	g	o	n	n	/TEI/teiHeader/fileDesc/extent/measure[@unit='words']
 identifiant	Identiant du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/@xml:id
