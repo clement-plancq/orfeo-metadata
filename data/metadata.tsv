@@ -33,4 +33,4 @@ milieu	Milieu	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
-url	Addresse d'échantillon	g	i	n	n	n/a
+url	Adresse d'échantillon	g	i	n	n	n/a
