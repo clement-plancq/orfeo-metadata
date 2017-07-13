@@ -1,7 +1,5 @@
 Short name	Long name	Field type	Indexing and search	Show in concordancer	Show in snippet view	XPath
-type	Type	g	f	y	n	/TEI/teiHeader/fileDesc/notesStmt/note[@type='oralEcrit']/text()
-nomCorpus	Corpus	g	f	y	n	/TEI/teiHeader/encodingDesc/projectDesc/p/text()
-langue	Langue	g	f	n	n	/TEI/teiHeader/profileDesc/langUsage/language/text()
+nomCorpus	Corpus	g	f	y	n	/TEI/teiHeader/fileDesc/sourceDesc/bibl/name[2]/text()
 nomFichier	Nom du fichier	g	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/title/text()
 responsables	Responsable(s)	gm	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/respStmt/name[preceding::resp[1] = 'Responsables du corpus']/text()
 resume	Résumé	g	s	n	n	/TEI/teiHeader/profileDesc/abstract/p/text()
@@ -14,7 +12,6 @@ formatSignal	Format du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/r
 formatVideo	Format de la vidéo	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording[@type='video']/@ana
 anonymisationSignal	Anonymisation du signal	g	i	n	n	orfeo:/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@ana
 localisationEnregistrement	Localisation de l'enregistrement	g	i	n	n	/TEI/teiHeader/profileDesc/settingDesc/place/placeName/text()
-nombreLocuteurs	Nombre de locuteurs	g	f	n	n	count(/TEI/teiHeader/profileDesc/particDesc/listPerson/person)
 conditionsUtilisation	Conditions d'utilisation	g	i	n	n	/teiHeader/fileDesc/publicationStmt/text()
 niveauxAnnotation	Niveaux d'annotation	gm	i	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/interpretation/p/text()
 formatTranscription	Format de la transcription	gm	i	n	n	if (TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@type) then concat(/TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@target, ' (type ', /TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@type, ')') else /TEI/teiHeader/fileDesc/notesStmt/relatedItem/ptr/@target
@@ -27,10 +24,13 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	n	n	/TEI/
 profession	Profession du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
-nature	Type de texte	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-secteur	Secteur	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-milieu	Milieu	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
-distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef/@target
+type	Type de texte	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='type']/@target
+sousType	Sous-type de texte	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='sous-type']/@target
+secteur	Secteur	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='nature_type']/@target
+milieu	Milieu	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='milieu']/@target
+modality	Modalité	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='modality']/@target
+nombreLocuteurs	Nombre de locuteurs	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='nbLocuteurs']/@target
+distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef[4]/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
 url	Adresse d'échantillon	g	i	n	n	n/a
