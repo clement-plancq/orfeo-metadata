@@ -30,7 +30,7 @@ secteur	Secteur	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='na
 milieu	Milieu	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='milieu']/@target
 modality	Modalité	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='modality']/@target
 nombreLocuteurs	Nombre de locuteurs	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='nbLocuteurs']/@target
-distance	Distance	g	f	n	n	orfeo:/TEI/teiHeader/profileDesc/textClass/catRef[4]/@target
+channel	Distance	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='channel']/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
 url	Adresse d'échantillon	g	i	n	n	n/a
