@@ -1,7 +1,7 @@
 Short name	Long name	Field type	Indexing and search	Show in concordancer	Show in snippet view	XPath
 nomCorpus	Corpus	g	f	y	n	/TEI/teiHeader/fileDesc/sourceDesc/bibl/name[2]/text()
 nomFichier	Nom du fichier	g	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/title/text()
-responsables	Responsable(s)	gm	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/respStmt/name[preceding::resp[1] = 'Responsables du corpus']/text()
+responsables	Responsable(s)	gm	i	n	n	/TEI/teiHeader/fileDesc/titleStmt/respStmt/name[contains(preceding::resp[1], 'Responsables du corpus')]/text()
 resume	Résumé	g	s	n	n	/TEI/teiHeader/profileDesc/abstract/p/text()
 dateEnregistrement	Date de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/date/text()
 dureeEnregistrement	Durée de l'enregistrement	g	i	n	n	/TEI/teiHeader/fileDesc/sourceDesc/recordingStmt/recording/@dur
@@ -24,13 +24,14 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	n	n	/TEI/
 profession	Profession du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
+statusAnnotation	Annotation	g	f	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/interpretation/p[2]/@ana
 type	Type de texte	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='type']/@target
 sousType	Sous-type de texte	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='sous-type']/@target
-secteur	Secteur	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='nature_type']/@target
-milieu	Milieu	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='milieu']/@target
+secteur	Secteur	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='secteur']/@target
+milieu	Interaction en milieu …	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='milieu']/@target
 modality	Modalité	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='modality']/@target
 nombreLocuteurs	Nombre de locuteurs	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='nbLocuteurs']/@target
-channel	Distance	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='channel']/@target
+channel	Situation de l'enregistrement	g	f	n	n	TEI/teiHeader/profileDesc/textClass/catRef[@corresp='channel']/@target
 quality	Qualité d'annotation	g	i	n	n	n/a
 annotator	Annotateur	g	i	n	n	n/a
 url	Adresse d'échantillon	g	i	n	n	n/a
