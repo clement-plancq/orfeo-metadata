@@ -24,7 +24,7 @@ statutLangueFrancaise	Compétence du locuteur en langue française	s	i	n	n	/TEI/
 profession	Profession du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/occupation/text()
 niveauEtudes	Niveau d'études du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/education/text()
 lieuNaissance	Lieu de naissance du locuteur	s	i	n	n	/TEI/teiHeader/profileDesc/particDesc/listPerson/person/birth/placeName/text()
-statutAnnotation	Annotation	g	f	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/interpretation/p[2]/@ana
+statutAnnotation	Annotation	g	f	n	n	/TEI/teiHeader/encodingDesc/editorialDecl/interpretation/p/@ana
 type	Type	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='type']/@target
 sousType	Sous-type de texte	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='sous-type']/@target
 secteur	Secteur	g	f	n	n	/TEI/teiHeader/profileDesc/textClass/catRef[@corresp='secteur']/@target
